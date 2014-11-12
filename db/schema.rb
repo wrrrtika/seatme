@@ -14,6 +14,8 @@
 ActiveRecord::Schema.define(version: 20141112214411) do
 
   create_table "reservations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "restaurant_id"
     t.integer  "party_size"
     t.datetime "when"
     t.text     "note"
@@ -22,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141112214411) do
   end
 
   create_table "restaurants", force: true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.string   "address"
     t.text     "description"
