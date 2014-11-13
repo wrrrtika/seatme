@@ -1,4 +1,36 @@
 Rails.application.routes.draw do
+
+  resources :user, only: [:new, :create] do
+    resources :reservation
+  end
+
+  resources :restaurant
+
+  resources :sessions, only: [:new, :create, :destroy]
+
+# Prefix Verb   URI Pattern                                   Controller#Action
+# user_reservation_index GET    /user/:user_id/reservation(.:format)          reservation#index
+#                        POST   /user/:user_id/reservation(.:format)          reservation#create
+#   new_user_reservation GET    /user/:user_id/reservation/new(.:format)      reservation#new
+#  edit_user_reservation GET    /user/:user_id/reservation/:id/edit(.:format) reservation#edit
+#       user_reservation GET    /user/:user_id/reservation/:id(.:format)      reservation#show
+#                        PATCH  /user/:user_id/reservation/:id(.:format)      reservation#update
+#                        PUT    /user/:user_id/reservation/:id(.:format)      reservation#update
+#                        DELETE /user/:user_id/reservation/:id(.:format)      reservation#destroy
+#             user_index POST   /user(.:format)                               user#create
+#               new_user GET    /user/new(.:format)                           user#new
+#       restaurant_index GET    /restaurant(.:format)                         restaurant#index
+#                        POST   /restaurant(.:format)                         restaurant#create
+#         new_restaurant GET    /restaurant/new(.:format)                     restaurant#new
+#        edit_restaurant GET    /restaurant/:id/edit(.:format)                restaurant#edit
+#             restaurant GET    /restaurant/:id(.:format)                     restaurant#show
+#                        PATCH  /restaurant/:id(.:format)                     restaurant#update
+#                        PUT    /restaurant/:id(.:format)                     restaurant#update
+#                        DELETE /restaurant/:id(.:format)                     restaurant#destroy
+#               sessions POST   /sessions(.:format)                           sessions#create
+#            new_session GET    /sessions/new(.:format)                       sessions#new
+#                session DELETE /sessions/:id(.:format)                       sessions#destroy
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
