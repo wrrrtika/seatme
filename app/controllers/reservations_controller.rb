@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-	before_filter :load_restaurant
+	before_filter :load_restaurant, :logged_in?
 
 	def new
 		@reservation = Reservation.new
