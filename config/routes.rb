@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :reservations
   end
 
+  get 'reservations/' => 'reservations#show'
+
   root 'restaurants#index'
 
   resources :sessions, only: [:new, :create, :destroy]

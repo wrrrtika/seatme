@@ -1,21 +1,25 @@
 <h1><%= @restaurant.name %></h1>
 
-<h3>Create a new reservation</h3>
+<% if current_user %>
+	<h3>Create a new reservation</h3>
 
-<%= form_for [@restaurant, @reservation] do |f| %>
-	<div class="field">
-		<%= f.label :party_size %>
-		<%= f.number_field :party_size %>
-	</div>
-	<div class="field">
-		<%= f.label :res_time %>
-		<%= f.datetime_field :res_time %>
-	</div>
-	<div class="field">
-		<%= f.label :note %>
-		<%= f.text_area :note %>
-	</div>
-	<div class="actions">
-		<%= f.submit %>
-	</div>
+	<%= form_for [@restaurant, @reservation] do |f| %>
+		<div class="field">
+			<%= f.label :party_size %>
+			<%= f.number_field :party_size %>
+		</div>
+		<div class="field">
+			<%= f.label :res_time %>
+			<%= f.datetime_field :res_time %>
+		</div>
+		<div class="field">
+			<%= f.label :note %>
+			<%= f.text_area :note %>
+		</div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+<% else %>
+	<p>You must be logged in to create a reservation!</p>
 <% end %>

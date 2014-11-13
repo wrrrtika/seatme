@@ -1,0 +1,13 @@
+<h1>All Reservations</h1>
+
+<ul>
+<% @reservations.each do |reservation| %>
+	<li>
+		<%= reservation.user.first_name + ' ' + reservation.user.last_name %> 
+		made a reservation at <%= reservation.restaurant.name %> 
+		with a party size of <%= reservation.party_size %> 
+		at the date/time of <%= reservation.res_time %>, 
+		and made the note: <%= reservation.note %>.
+	</li>
+<% end %>
+</ul>
