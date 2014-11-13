@@ -5,3 +5,36 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.destroy_all
+Reservation.destroy_all
+Restaurant.destroy_all
+
+
+User.create!([{
+
+	first_name: 'Billy',
+	last_name:  'Billyson',
+	email: 'bill@billy.com',
+	phone: '555-555-555',
+	password_digest: 'password'
+	
+	}])
+
+Restaurant.create!([{
+
+	name: 'Macdonalds',
+	address: 'everywhere',
+	description: 'something like food...sort of.'
+	}])
+
+Reservation.create! ([{
+
+	party_size: "100",
+	user_id: 2,
+	note: "I'm severely obese and shouldn't be eating here, but oh well",
+	restaurant_id: 1
+	}])
+
+
+p "Created one user, one restaurant, and one reservation!"
