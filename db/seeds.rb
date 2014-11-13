@@ -31,9 +31,7 @@ Restaurant.create!([{
 Reservation.create! ([{
 
 	party_size: "100",
-	user_id: 2,
-	note: "I'm severely obese and shouldn't be eating here, but oh well",
-	restaurant_id: 1
+	note: "I'm severely obese and shouldn't be eating here, but oh well"
 	}])
 
 
