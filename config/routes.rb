@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :reservations
   end
 
-  get 'reservations/' => 'reservations#show'
+  get 'reservations/' => 'reservations#index'
 
   root 'restaurants#index'
 
