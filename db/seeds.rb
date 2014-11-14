@@ -11,28 +11,66 @@
 # Restaurant.destroy_all
 
 
-# User.create!([{
+User.create!([{
 
-# 	first_name: 'Billy',
-# 	last_name:  'Billyson',
-# 	email: 'bill@billy.com',
-# 	phone: '555-555-555',
-# 	password_digest: 'password'
-	
-# 	}])
+	first_name: 'Billy',
+	last_name:  'Billyson',
+	email: 'demo1@demo.com',
+	phone: '555-555-555',
+	password_digest: '$2a$10$ZFida4nIGNn3EajIHlqyZ.MqiNOs5urYRcja8xMO97blujnP/CCou'
+}])
 
-# Restaurant.create!([{
+User.create!([{
 
-# 	name: 'Macdonalds',
-# 	address: 'everywhere',
-# 	description: 'something like food...sort of.'
-# 	}])
+	first_name: 'John',
+	last_name:  'Doe',
+	email: 'demo2@demo.com',
+	phone: '555-555-555',
+	password_digest: '$2a$10$ZFida4nIGNn3EajIHlqyZ.MqiNOs5urYRcja8xMO97blujnP/CCou'
+}])
 
-# Reservation.create! ([{
+Restaurant.create!([{
 
-# 	party_size: "100",
-# 	note: "I'm severely obese and shouldn't be eating here, but oh well"
-# 	}])
+	name: 'Billy\'s Pies',
+	address: 'everywhere',
+	description: 'something like food...sort of.',
+	user_id: 1
+}])
 
+Restaurant.create!([{
 
-# p "Created one user, one restaurant, and one reservation!"
+	name: 'John\'s Pizza',
+	address: 'everywhere',
+	description: 'something like food...sort of.',
+	user_id: 2
+}])
+
+Reservation.create! ([{
+	party_size: "100",
+	note: "I'm severely obese and shouldn't be eating here, but oh well",
+	restaurant_id: 1,
+	user_id: 1
+}])
+
+Reservation.create! ([{
+	party_size: "88",
+	note: "Food!!!",
+	restaurant_id: 1,
+	user_id: 2
+}])
+
+Reservation.create! ([{
+	party_size: "10",
+	note: "I need meat",
+	restaurant_id: 2,
+	user_id: 1
+}])
+
+Reservation.create! ([{
+	party_size: "15",
+	note: "Allergic to water",
+	restaurant_id: 2,
+	user_id: 2
+}])
+
+p "Created demo users (demo1@demo.com, demo2@demo.com) with password 'demo'. 1 restaurant created for each user. Each user has made a reservation at each restaurant."
