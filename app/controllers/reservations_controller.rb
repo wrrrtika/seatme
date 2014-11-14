@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
 		@reservation = Reservation.new
 	end
 	def index
-		@reservations = Reservation.all
 		@my_reservations = current_user.reservations
 		@rest_reservations = current_user.restaurant.reservations
 	end
