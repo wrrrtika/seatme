@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
 	end
 	def index
 		@reservations = Reservation.all
-		@my_reservations = @reservations.users.id(current_user)
+		@my_reservations = current_user.reservations
 	end
 	def create
 		@restaurant = Restaurant.find(params[:restaurant_id])
