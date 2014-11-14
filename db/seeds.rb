@@ -48,6 +48,7 @@ Restaurant.create!([{
 Reservation.create! ([{
 	party_size: "100",
 	note: "I'm severely obese and shouldn't be eating here, but oh well",
+	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 1,
 	user_id: 1
 }])
@@ -55,6 +56,7 @@ Reservation.create! ([{
 Reservation.create! ([{
 	party_size: "88",
 	note: "Food!!!",
+	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 1,
 	user_id: 2
 }])
@@ -62,6 +64,7 @@ Reservation.create! ([{
 Reservation.create! ([{
 	party_size: "10",
 	note: "I need meat",
+	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 2,
 	user_id: 1
 }])
@@ -69,6 +72,7 @@ Reservation.create! ([{
 Reservation.create! ([{
 	party_size: "15",
 	note: "Allergic to water",
+	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 2,
 	user_id: 2
 }])
