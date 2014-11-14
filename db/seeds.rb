@@ -34,6 +34,7 @@ Restaurant.create!([{
 	name: 'Billy\'s Pies',
 	address: 'everywhere',
 	description: 'something like food...sort of.',
+	capacity: 10,
 	user_id: 1
 }])
 
@@ -42,11 +43,12 @@ Restaurant.create!([{
 	name: 'John\'s Pizza',
 	address: 'everywhere',
 	description: 'something like food...sort of.',
+	capacity: 10,
 	user_id: 2
 }])
 
 Reservation.create! ([{
-	party_size: "100",
+	party_size: "1",
 	note: "I'm severely obese and shouldn't be eating here, but oh well",
 	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 1,
@@ -54,7 +56,7 @@ Reservation.create! ([{
 }])
 
 Reservation.create! ([{
-	party_size: "88",
+	party_size: "2",
 	note: "Food!!!",
 	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 1,
@@ -62,7 +64,7 @@ Reservation.create! ([{
 }])
 
 Reservation.create! ([{
-	party_size: "10",
+	party_size: "5",
 	note: "I need meat",
 	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 2,
@@ -70,11 +72,11 @@ Reservation.create! ([{
 }])
 
 Reservation.create! ([{
-	party_size: "15",
+	party_size: "5",
 	note: "Allergic to water",
 	res_time: "2014-11-14 22:00:00",
 	restaurant_id: 2,
 	user_id: 2
 }])
 
-p "Created demo users (demo1@demo.com, demo2@demo.com) with password 'demo'. 1 restaurant created for each user. Each user has made a reservation at each restaurant."
+p "Created demo users (demo1@demo.com, demo2@demo.com) with password 'demo'. 1 restaurant created for each user. John's Pizza is currently at capacity @10pm, while Billy's Pies is at 3/10. Each user has made a reservation at each restaurant."
