@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116191747) do
+ActiveRecord::Schema.define(version: 20141116192005) do
 
   create_table "reservations", force: true do |t|
     t.integer  "party_size"
@@ -58,6 +58,9 @@ ActiveRecord::Schema.define(version: 20141116191747) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_role"
+    t.integer  "role_id"
   end
+
+  add_index "users", ["role_id"], name: "index_users_on_role_id"
 
 end
