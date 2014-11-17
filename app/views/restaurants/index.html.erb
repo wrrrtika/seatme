@@ -1,11 +1,75 @@
-<h1>Restaurants</h1>
 
-<ul>
-	<% @restaurants.each do |restaurant| %>
-		<li>
-			<%= link_to restaurant.name, "/restaurants/#{restaurant.id}" %>
-		</li>
-	<% end %>
-</ul>
 
-<%= link_to "Create New Restaurant", new_restaurant_path %>
+<div class="container">
+  <div class="no-gutter row">
+          <!-- left side column -->
+        <div class="col-md-2">
+          <div class="panel panel-default" id="sidebar">
+            <div class="panel-heading" style="background-color:#888;color:#fff;">Index</div>
+            <div class="panel-body">
+              <% i = 0 %>
+              <% @restaurants.each do |restaurant| %>
+                <div class="accordion" id="accordian<%= restaurant.id %>">
+                  <div class="accordion-group">
+                    <div class="accordion-heading">
+                      <%= link_to restaurant.name, "/restaurants/#{restaurant.id}", :"data-toggle" => "collapse", :"data-parent" => "accordian#{i}" %>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse">
+                      <div class="accordion-inner">
+                        <%= restaurant.description %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+                
+            </div><!--/panel body-->
+        	</div><!--/panel-->
+      	</div><!--/end left column-->
+            
+        <!--mid column-->
+        <div class="col-md-3">
+          <div class="panel" id="midCol">
+            <div class="panel-heading" style="background-color:#555;color:#eee;">Newest Restaurants</div> 
+            <div class="panel-body">
+              <img class="img-responsive" src="//placehold.it/300x100/F0F0F0">
+              
+              <% @restaurants.each do |restaurant| %>
+                <div class="media">
+                  <a class="pull-left" href="#">
+                  	<%= link_to href: "/restaurants/#{restaurant.id}" do %>
+                    	<img class="media-object pull-left" style="margin-right:10px" src="http://placehold.it/80/F0F0F0">
+                    <% end %>
+                  </a>
+                  <div class="media-body">
+                    <h5 class="media-heading"><a href="/restaurants/<%= restaurant.id %>" target="ext" class="pull-right"><i class="glyphicon glyphicon-share"></i></a> <strong><%= link_to restaurant.name, "/restaurants/#{restaurant.id}" %></strong></h5>
+                    <small><%= restaurant.description %></small><br>
+                    <span class="badge">cap: <%= restaurant.capacity.to_s %></span>
+                  </div>
+                </div>
+                <div style="clear:both;"></div>
+              <% end %>
+              
+           	</div> 
+           </div><!--/panel-->
+          </div><!--/end mid column-->
+          
+          <!-- right content column-->
+          <div class="col-md-7" id="content">
+            <div class="panel">
+        			<div class="panel-heading" style="background-color:#111;color:#fff;">Hot Choices</div>
+	        			<% @restaurants.each do |restaurant| %>
+	                <div class="panel-body">
+	                  <h2><%= restaurant.name %></h2>
+	                  <!-- <img src="//placehold.it/150x100/EEEEEE" class="img-responsive pull-right"> -->
+	                  <%= restaurant.description %>
+	                  <br><br>
+	                  <%= link_to "View Details", "/restaurants/#{restaurant.id}", :class => "btn btn-default" %>
+	                </div><!--/panel-body-->
+	              <% end %>
+              </div>
+            </div><!--/panel-->
+          </div><!--/end right column-->
+        </div> 
+    </div>
+</div>
