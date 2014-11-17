@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Seatme</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <% if current_user %>
-    <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %></p>
-    <%= link_to "Log out!", session_path("current"), method: :delete %>
-    <%= link_to "All Reservations", "/reservations" %>
-    <%= link_to "All Restaurants", "/restaurants" %>  
-  <% else %>
-    <%= link_to "Log in!", new_session_path %>
-    <%= link_to "Sign-up", new_user_path %>
-  <% end %>
+  <head>
+    <title>Seatme</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <!--   <% if current_user %>
+        <p>Hello, <%= current_user.first_name %> <%= current_user.last_name %></p>
+        <%= link_to "Log out!", session_path("current"), method: :delete %>
+        <%= link_to "All Reservations", "/reservations" %>
+        <%= link_to "All Restaurants", "/restaurants" %>  
+      <% else %>
+        <%= link_to "Log in!", new_session_path %>
+        <%= link_to "Sign-up", new_user_path %>
+      <% end %>
 
 
-  <% if flash[:notice] %>
-    <p id="notice"><%= flash[:notice] %></p>
-  <% end %>
+      <% if flash[:notice] %>
+        <p id="notice"><%= flash[:notice] %></p>
+      <% end %>
 
-  <%if flash[:alert] %>
-    <p id="alert"><%= flash[:alert] %></p>
-  <% end %>  
-<%= yield %>
+      <%if flash[:alert] %>
+        <p id="alert"><%= flash[:alert] %></p>
+      <% end %>  
+    <%= yield %> -->
 
-</body>
+
+    <nav class="navbar navbar-static">
+       <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://www.bootply.com" target="ext"><b>SeatMe!</b></a>
+          <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          </a>
+        </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">  
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Channels</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Sub-link</a></li>
+                  <li><a href="#">Sub-link</a></li>
+                  <li><a href="#">Sub-link</a></li>
+                  <li><a href="#">Sub-link</a></li>
+                  
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-right navbar-nav">
+              <li class="dropdown">
+                <% if current_user %>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.first_name + ' ' + current_user.last_name %>&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><%= link_to "My Reservations", "/reservations" %></a></li>
+                      <li class="divider"></li>
+                      <li><%= link_to "Log out!", session_path("current"), method: :delete %></li>
+                    </ul>
+                  </li>
+                </ul>
+              <% else %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    </nav><!-- /.navbar -->
+
+    <header class="masthead">
+      <div class="container">
+        
+      </div>
+    </header>
+
+    <!-- Begin Body -->
+    <%= yield %>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-right"><h5>©Company 2014</h5></div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>

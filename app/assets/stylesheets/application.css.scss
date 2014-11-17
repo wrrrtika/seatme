@@ -17,6 +17,9 @@ header {
   	margin-bottom:5px;
 }
 
+$primary-red: #571804;
+$darker-red: #571804;
+
 /* only apply sticky columns on wider screens */
 @media (min-width: 1200px) {
   #sidebar {
@@ -85,7 +88,7 @@ h3.highlight  {
 }
 
 .navbar {
-	background-color:#77CCDD;
+	background-color:#721b00;
   	color:#ffffff;
   	border-radius:0;
 }
@@ -93,14 +96,14 @@ h3.highlight  {
   	color:#fff;
   	padding-left:20px;
   	padding-right:20px;
-  	border-left:1px solid #66BBCC;
+  	border-left:1px solid #571804;
 }
 .navbar-nav > li:last-child > a {
-  	border-right:1px solid #66BBCC;
+  	border-right:1px solid #571804;
 }
 
 .navbar-nav li a:hover {
-  	background-color:#66BBCC;
+  	background-color:#571804;
 }
 
 .navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
