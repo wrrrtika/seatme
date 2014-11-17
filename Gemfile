@@ -31,8 +31,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry-rails'
 
+# Better errors gems rock
 gem 'better_errors'
 gem 'binding_of_caller'
+
+# Strap that shit
+gem 'bootstrap-sass', '~> 3.3.1'
 
 # Use unicorn as the app server
 # gem 'unicorn'
