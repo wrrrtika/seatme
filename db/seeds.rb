@@ -16,7 +16,7 @@ User.create!([{
 	first_name: 'Billy',
 	last_name:  'Billyson',
 	email: 'demo1@demo.com',
-	user_role: 'Restaurant Owner',
+	role_id: 1,
 	phone: '555-555-555',
 	password_digest: '$2a$10$ZFida4nIGNn3EajIHlqyZ.MqiNOs5urYRcja8xMO97blujnP/CCou'
 }])
@@ -26,8 +26,8 @@ User.create!([{
 	first_name: 'John',
 	last_name:  'Doe',
 	email: 'demo2@demo.com',
+	role_id: 2,
 	phone: '555-555-555',
-	user_role: 'Administrator',
 	password_digest: '$2a$10$ZFida4nIGNn3EajIHlqyZ.MqiNOs5urYRcja8xMO97blujnP/CCou'
 }])
 
@@ -36,7 +36,7 @@ User.create!([{
 	first_name: 'Kilgore',
 	last_name:  'Trout',
 	email: 'demo3@demo.com',
-	user_role: 'Customer',
+	role_id: 3,
 	phone: '555-555-555',
 	password_digest: '$2a$10$ZFida4nIGNn3EajIHlqyZ.MqiNOs5urYRcja8xMO97blujnP/CCou'
 }])
